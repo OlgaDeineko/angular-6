@@ -1,0 +1,25 @@
+<mat-grid-list cols="1" rowHeight="5em">
+  <mat-card class="chart-card">
+    <h1 class="mat-display-1">Bar Chart</h1>
+    <div class="chart-bar-container">
+      <canvas baseChart
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [legend]="barChartLegend"
+              [chartType]="barChartType"
+              (chartHover)="chartHovered($event)"
+              (chartClick)="chartClicked($event)"></canvas>
+    </div>
+    <button mat-button color="primary" (click)="getData()">Get data</button>
+    <button mat-button color="primary" (click)="sendData()">Send data</button>
+  </mat-card>
+
+  <mat-card class="result-card">
+    <form class="result-form">
+      <mat-form-field>
+        <textarea matInput placeholder="Result..." [(ngModel)]="result" [ngModelOptions]="{standalone: true}"></textarea>
+      </mat-form-field>
+    </form>
+  </mat-card>
+</mat-grid-list>

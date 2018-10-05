@@ -1,0 +1,8 @@
+.result-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.result-form > * {
+  width: 100%;
+}
